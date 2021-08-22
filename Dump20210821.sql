@@ -28,7 +28,7 @@ CREATE TABLE `registro_reportes` (
   `tipo` varchar(45) DEFAULT NULL,
   `matricula_vehiculo` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_reportes`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `registro_reportes` (
 
 LOCK TABLES `registro_reportes` WRITE;
 /*!40000 ALTER TABLE `registro_reportes` DISABLE KEYS */;
-INSERT INTO `registro_reportes` VALUES (1,'Exceso de velocidad','1','PGI2 EEN'),(11,'Vehiculo reporte','2','CVL 657 18');
+INSERT INTO `registro_reportes` VALUES (1,'Exceso de velocidad','1','PGI2 EEN'),(17,'Mora en pago de credito de peaje','6','CVL 657 18');
 /*!40000 ALTER TABLE `registro_reportes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,7 +81,7 @@ CREATE TABLE `tasa_peaje` (
   `monto` int DEFAULT NULL,
   `fecha` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_peaje`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +90,7 @@ CREATE TABLE `tasa_peaje` (
 
 LOCK TABLES `tasa_peaje` WRITE;
 /*!40000 ALTER TABLE `tasa_peaje` DISABLE KEYS */;
-INSERT INTO `tasa_peaje` VALUES (1,'CVL 657 18',200,'21/08/2021');
+INSERT INTO `tasa_peaje` VALUES (4,'CVL 657 18',100,'2021, 07, 21');
 /*!40000 ALTER TABLE `tasa_peaje` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,4 +127,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-21 18:07:43
+-- Dump completed on 2021-08-21 18:55:24

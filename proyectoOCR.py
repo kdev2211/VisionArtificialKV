@@ -81,12 +81,37 @@ class DataBase:
             self.cursor.execute(sql1)
             plate1=self.cursor.fetchone()
 
-            
-            
 
             
 
             if (plate1):
+
+                date = datetime.strptime(plate1[3], '%Y, %m, %d')
+
+                TODAY = datetime.today()
+                sTODAY = TODAY.strftime("%Y, %m, %d")
+
+                DTODAY = datetime.strptime(sTODAY, '%Y, %m, %d')
+               
+
+                delta = DTODAY - date
+            
+                if delta.days > 30:
+                    cv2.putText(image,"FACTURAS VENCIDAS",(x-250,y-220),1,2.2,(0,0,255),2)
+
+                    sqlF="insert into registro_reportes(descripcion, tipo, matricula_vehiculo) values('{}','{}','{}');".format("Mora en pago de credito de peaje","6",num)
+                    try:
+                        self.cursor.execute(sqlF)
+                        self.connection.commit()
+                        print(self.cursor.rowcount, "Record inserted successfully into table")
+                  
+                        print (sqlF)
+                    except Exception as e:
+                        raise                         
+
+                else:
+                    return False    
+
                 añadido = plate1[2] + monto
                 sql="update tasa_peaje set monto = '{}' WHERE id_peaje = '{}';".format(añadido, plate1[0])
 
@@ -392,7 +417,7 @@ for c in cnts:
       numeracion = " ".join(new_string.split())
 
       today = datetime.today()
-      fecha = today.strftime("%d/%m/%Y")
+      fecha = today.strftime("%Y, %m, %d")
 
       print (fecha)
       database.get_placa(numeracion)

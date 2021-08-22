@@ -1,1 +1,7 @@
 https://github.com/kdev2211/VisionArtificialKV.git
+
+Presionar Esc para ingresar a Interfaz grafica 
+
+
+Integrantes: Cristian Aldair Carias 2017-2011-0063
+	     Victor Aguilar Espinal 2017-1011-0278
